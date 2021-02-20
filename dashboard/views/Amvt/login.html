@@ -1,0 +1,134 @@
+<div ng-controller="loginCtrl">
+    <div class="body">
+        <div class="middle-box text-center loginscreen" style="margin-left: 450px;border-radius:50px">
+            <div class="widgets-container"
+                style="background:white; color:#84149b;border-color: #cb13b2;
+
+                width: 426px; height: 331px;padding-left: 30px; padding-right: 30px;padding-top: 30px; padding-bottom: 30px;border-radius:40px">
+                <h3 style="font-family: Arial, Helvetica, sans-serif">Welcome to Inventory Management Dashboard </h3>
+                <form class="top15">
+
+                    <div class="form-group">
+                        <input style="background-color: transparent !important;color: #000059;border-top-width: 0px;;border-left-width: 0px;;border-right-width: 0px
+                                ;border-bottom-width: 2px solid #000059 !important;color: #000059" required=""
+                            placeholder="Username" class="form-control" type="text" ng-model="a.username">
+                        <!-- <input required="" placeholder="Username" class="form-control" type="text" ng-model="username"> -->
+                    </div>
+                    <div class="form-group">
+                        
+
+                        <span> <input style="width:100%;background-color: transparent !important;color: #000059;border-top-width: 0px;;border-left-width: 0px;;border-right-width: 0px
+                                ;border-bottom-width: 2px solid #000059 !important;color: #000059" required=""
+                                placeholder="Password" class="form-control 	" type="password" ng-model="a.password"
+                                id="myInput"></span><span> <i class="fa fa-eye" aria-hidden="true"
+                                style="margin-top: -20px;width: 20%;float: right; " onclick="myFunction()"></i></span>
+
+                        <!-- <input required="" placeholder="Password" class="form-control" type="password" ng-model="password" id="myInput"> -->
+                        <br>
+                        <a style="cursor: pointer;color: indigo;" data-toggle="modal" data-target="#myModal">Change Password</a>
+
+                    </div>
+                    <label>
+                        <span> </span><input type="reset" value="Login" ng-click="getLoggedIn(a)"
+                            style="padding-left: 0px;border-radius:50px;background: rgb(222, 223, 217);width: 88px;height: 32px;" />
+                    </label>
+                    <!-- <button class="btn green block full-width bottom15" type="submit" ng-click="getLoggedIn()">Login</button> -->
+                </form>
+                <p class="top15"> <a href="https://www.amaravathisoftware.com/" target="_blank"
+                        style="color: #000059">Copyright Amaravathi Software Innovations Pvt Ltd &copy; 2021
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" style="width: 700px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <h3 style="text-align: center; color: rgb(13, 24, 75); margin-top: 10px;">Reset Password</h3>
+                    <hr>
+                    <form name='abc'>
+                        <div class="modal-body">
+                            <label class="col-md-3 control-label" style="margin-top:10px"><b>New Password:</b></label>
+                            <div class="input-group date form_datetime col-md-6" style="margin-bottom: 20px;">
+                                <input type="text" ng-model="updated_arr.new_password" class="form-control"
+                                    name="newpassword" required>
+                            </div>
+
+                            <label class="col-md-3 control-label"><b>Confirm Password:</b></label>
+                            <div class="input-group date form_datetime col-md-6">
+                                <input type="text" ng-model="updated_arr.update_password" class="form-control"
+                                    name="updatepassword" ng-keyup="showdata()" required>
+                                <div ng-show="showerror">
+                                    <p ng-if="updated_arr.new_password != updated_arr.update_password">
+                                        <span style="color:red;" class="fa fa-exclamation-circle">Password Should
+                                            Match.</span>
+                                    </p>
+                                </div>
+
+                                <!-- <p ng-show="abc.name. && abc.name.$error.required"
+                                class="help-block"><span style="color:red;"
+                                    class="fa fa-exclamation-circle">Name is required.</span></p> -->
+                            </div>
+                            <br>
+                        </div>
+                    </form>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn green" data-dismiss="modal"
+                            ng-click="updatepassword(updated_arr)">Update</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<style>
+    .green-bg {
+        background-color: white;
+    }
+
+    .middle-box {
+        max-width: 400px;
+        z-index: 100;
+        margin: 0 auto;
+        padding-top: 250px;
+    }
+
+    body {
+        background-image: url('images/updated.png');
+        background-color: white;
+        width: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .widgets-container {
+        background: rgba(0, 0, 0, .5) 0 0;
+        border: 1px solid #e7eaec;
+        box-sizing: border-box;
+        margin: 0 auto 0;
+        padding: 15px;
+        width: 100%;
+        color: #ffff;
+        margin-left: 100%;
+        filter: drop-shadow(4px 4px 4px rgba(211, 124, 26, 0.63));
+
+    }
+</style>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
